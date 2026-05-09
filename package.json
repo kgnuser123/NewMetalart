@@ -1,38 +1,29 @@
 {
-  "name": "frontend",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
-    "@react-google-maps/api": "^2.20.8",
-    "axios": "^1.15.2",
-    "gsap": "^3.15.0",
-    "helmet": "^8.1.0",
-    "react": "^19.2.5",
-    "react-beautiful-dnd": "^13.1.1",
-    "react-dom": "^19.2.5",
-    "react-helmet-async": "^3.0.0",
-    "react-icons": "^5.6.0",
-    "react-parallax-tilt": "^1.7.324",
-    "react-router-dom": "^7.14.2",
-    "react-toastify": "^11.1.0",
-    "swiper": "^12.1.4"
-  },
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.2.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "vite": "^8.0.10"
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.4.1",
+    "express-validator": "^7.3.2",
+    "mongoose": "^9.6.0",
+    "multer": "^2.1.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemon": "^3.1.14",
+    "react-beautiful-dnd": "^13.1.1"
   }
 }
