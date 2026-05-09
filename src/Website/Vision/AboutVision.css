@@ -1,0 +1,161 @@
+/* LIGHT THEME ABOUT VISION */
+.nma-vsn-section-light {
+  background-color: #fcfcfc;
+  color: #333;
+  padding: 100px 20px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.nma-vsn-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.nma-vsn-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.nma-vsn-badge {
+  color: #B48E56;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.nma-vsn-main-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  color: #111;
+  margin: 15px 0;
+}
+
+.nma-vsn-bronze { color: #B48E56; }
+
+/* INTRODUCTION BLOCK STYLING */
+.nma-vsn-intro-block {
+  background: #ffffff;
+  border: 1px solid #eee;
+  padding: 50px;
+  margin-bottom: 80px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+}
+
+.nma-vsn-intro-heading {
+  font-size: 1.1rem;
+  color: #B48E56;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.nma-vsn-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.nma-vsn-highlight-box {
+  background: #fdfaf5;
+  padding: 20px;
+  border-left: 5px solid #B48E56;
+}
+
+/* ========== ALWAYS ANIMATED CARDS ========== */
+.nma-vsn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+.nma-vsn-card-wrapper {
+  position: relative;
+  padding: 3px;
+  background: #f0f0f0;
+  border-radius: 60px; /* High rounding */
+  overflow: hidden;
+  display: flex;
+}
+
+/* Animated Border Logic - Always On */
+.nma-vsn-card-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent, 
+    #B48E56, 
+    transparent 35%
+  );
+  animation: rotateGlow 6s linear infinite;
+  z-index: 1;
+}
+
+.nma-vsn-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 57px;
+  padding: 45px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nma-vsn-card-icon {
+  font-size: 2rem;
+  color: #B48E56;
+  margin-bottom: 20px;
+}
+
+.nma-vsn-card-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.nma-vsn-card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  flex-grow: 1;
+}
+
+.nma-vsn-card-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.nma-vsn-signature {
+  color: #B48E56;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.nma-vsn-cta {
+  color: #111;
+  text-decoration: none;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .nma-vsn-intro-block { padding: 30px; }
+  .nma-vsn-grid { grid-template-columns: 1fr; }
+}

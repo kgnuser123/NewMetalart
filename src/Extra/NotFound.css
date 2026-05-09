@@ -1,0 +1,109 @@
+:root {
+  --bg-color: #E1E0E1;
+  --metal-tan: #A59585;
+  --dark-text: #3E342B;
+  --steel-grey: #5D5F63;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.nma-404-container {
+    height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* 404 Number Styling */
+.nma-404-number {
+  position: relative;
+  font-family: 'Druk Wide', sans-serif;
+  font-size: clamp(100px, 15vw, 180px); /* Responsive size */
+  color: transparent;
+  -webkit-text-stroke: 2px var(--dark-text);
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.digit {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+/* Making the '0' look like a metallic part */
+.zero {
+  color: var(--metal-tan);
+  -webkit-text-stroke: 0;
+  text-shadow: 4px 4px 0px var(--dark-text);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Text Section */
+.nma-404-title {
+  font-family: 'Druk Wide', sans-serif;
+  font-size: 24px;
+  color: var(--dark-text);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.nma-404-desc {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--steel-grey);
+  max-width: 450px;
+  margin: 0 auto 35px auto;
+  line-height: 1.6;
+}
+
+/* Button Styling */
+.back-home-btn {
+  font-family: 'Gilroy', sans-serif;
+  background-color: var(--dark-text);
+  color: #fff;
+  border: none;
+  padding: 16px 35px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.back-home-btn:hover {
+  background-color: var(--metal-tan);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(165, 149, 133, 0.3);
+}
+
+/* Footer in 404 */
+.nma-404-footer {
+  margin-top: 60px;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--steel-grey);
+  opacity: 0.6;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@media (max-width: 480px) {
+  .nma-404-title { font-size: 18px; }
+  .nma-404-desc { font-size: 14px; }
+}

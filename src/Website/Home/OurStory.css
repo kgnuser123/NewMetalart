@@ -1,0 +1,241 @@
+/* OurStory.css – Premium Story Section 
+   Fully responsive + image fits perfectly */
+
+.our-story-section {
+  padding: 80px 0;
+  background: #fafafc;
+}
+
+.story-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Grid: equal width, both columns stretch to same height */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+/* Text Column */
+.story-text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertically centre text content */
+}
+
+.story-heading {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #b88b4a, #e4b876);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heading-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #b88b4a, #e4b876);
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.story-content p {
+  color: #5a5a6e;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+}
+
+.story-badge {
+  margin-top: 30px;
+  display: inline-block;
+  background: rgba(184, 139, 74, 0.08);
+  border-left: 5px solid #b88b4a;
+  padding: 14px 28px;
+  border-radius: 0 12px 12px 0;
+  backdrop-filter: blur(2px);
+}
+
+.story-badge span {
+  font-weight: 600;
+  color: #1a1a2e;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+
+/* ========== IMAGE COLUMN – PERFECT FIT ========== */
+.story-image {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.image-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 30px 45px -20px rgba(0,0,0,0.3),
+              0 0 0 1px rgba(184,139,74,0.2) inset;
+  transition: all 0.4s ease;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fills the area without distortion */
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover zoom */
+.image-frame:hover img {
+  transform: scale(1.05);
+}
+
+.image-frame:hover {
+  box-shadow: 0 40px 60px -20px rgba(0,0,0,0.4);
+}
+
+/* Animated border behind */
+.image-border-animation {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: -24px;
+  bottom: -24px;
+  border: 3px solid rgba(184,139,74,0.6);
+  border-radius: 36px;
+  z-index: -1;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.image-frame:hover .image-border-animation {
+  top: 16px;
+  left: 16px;
+  right: -16px;
+  bottom: -16px;
+  border-color: #b88b4a;
+  box-shadow: 0 0 20px rgba(184,139,74,0.4);
+}
+
+/* Overlay & corner accent */
+.image-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(184,139,74,0.12) 0%, rgba(255,255,255,0) 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.image-frame:hover::after {
+  opacity: 1;
+}
+
+.image-frame::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-top: 3px solid #b88b4a;
+  border-left: 3px solid #b88b4a;
+  border-radius: 16px 0 0 0;
+  z-index: 2;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+.image-frame:hover::before {
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+@media (max-width: 992px) {
+  .story-grid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-story-section {
+    padding: 50px 0;
+  }
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .story-image {
+    height: auto;
+    order: -1;               /* image appears above text on mobile */
+    max-height: 60vh;        /* limit height on mobile */
+  }
+  .image-frame {
+    height: auto;
+    min-height: 300px;       /* ensure decent height on small screens */
+  }
+  .image-frame img {
+    height: 100%;
+    object-fit: cover;       /* still cover, but constrained by container */
+  }
+  .image-border-animation {
+    top: 15px;
+    left: 15px;
+    right: -15px;
+    bottom: -15px;
+  }
+  .image-frame::before {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-badge span {
+    font-size: 0.85rem;
+  }
+  .heading-underline {
+    width: 70px;
+  }
+  .image-frame {
+    min-height: 220px;       /* smaller but still visible */
+  }
+  .image-frame img {
+    object-fit: cover;
+  }
+}
+
+/* For very large screens, keep image sharp */
+@media (min-width: 1600px) {
+  .story-container {
+    max-width: 1600px;
+  }
+  .image-frame img {
+    object-fit: cover;
+  }
+}

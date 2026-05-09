@@ -1,0 +1,308 @@
+/* Footer.css - New Metal Art Premium Footer (Dynamic Backend Colors) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   GLOBAL FALLBACK VARIABLES (will be overridden by backend)
+   ========================================================================== */
+:root {
+  --color-footer-bg: #0a0804;
+  --color-footer-text: #E1E0E1;
+  --color-footer-link: #A59585;
+  --color-footer-bottom-bg: #130E07;
+  --color-footer-accent: #A59585;       /* bronze accent */
+  --color-footer-border: rgba(165, 149, 133, 0.15);
+}
+
+/* ==========================================================================
+   Estructura Base del Footer Premium (Metal Style)
+   ========================================================================== */
+.nmf-footer {
+  background-color: var(--color-footer-bg, #0a0804);
+  color: var(--color-footer-text, #E1E0E1);
+  font-family: 'Inter', sans-serif;
+  padding-top: 80px;
+  border-top: 3px solid var(--color-footer-accent, #A59585);
+  font-size: 1.15rem;
+}
+
+.nmf-main {
+  padding-bottom: 60px;
+}
+
+.nmf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   Grid del Footer (3 Columnas con Bloques Centrados)
+   ========================================================================== */
+.nmf-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Columna General */
+.nmf-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Estructura Especial: Envolturas para una Alineación Perfecta a la Izquierda
+   ========================================================================== */
+.nmf-links-col,
+.nmf-contact-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Títulos de sección */
+.nmf-col h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--color-footer-text, #E1E0E1);
+  margin: 0 0 25px 0;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding-bottom: 10px;
+  text-align: left;
+  width: auto;
+}
+
+/* Línea decorativa (color dinámico) */
+.nmf-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 2px;
+  background-color: var(--color-footer-accent, #A59585);
+}
+
+/* ==========================================================================
+   Enlaces Rápidos
+   ========================================================================== */
+.nmf-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.nmf-links li {
+  margin-bottom: 16px;
+}
+
+.nmf-links a {
+  font-size: 1.2rem;
+  color: var(--color-footer-link, #A59585);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.nmf-links a:hover {
+  color: var(--color-footer-link-hover, #c4a47a);  /* fallback lighter */
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   Sección de la Marca (Brand Column)
+   ========================================================================== */
+.nmf-brand-col {
+  align-items: flex-start;
+}
+
+.nmf-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--color-footer-text, #E1E0E1);
+  margin: 0 0 18px 0;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.nmf-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-footer-text, #E1E0E1);
+  opacity: 0.85;
+  margin-bottom: 25px;
+  max-width: 320px;
+  text-align: left;
+}
+
+/* Redes Sociales */
+.nmf-socials {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+.nmf-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-footer-bg, #0a0804);
+  color: var(--color-footer-text, #E1E0E1);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-footer-border, rgba(165,149,133,0.15));
+}
+
+.nmf-social-icon:hover {
+  background-color: var(--color-footer-accent, #A59585);
+  color: var(--color-footer-bg, #0a0804);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(165, 149, 133, 0.25);
+}
+
+/* ==========================================================================
+   Datos de Contacto (Get In Touch)
+   ========================================================================== */
+.nmf-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 350px;
+}
+
+.nmf-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  text-align: left;
+}
+
+.nmf-contact-icon {
+  font-size: 1.35rem;
+  color: var(--color-footer-accent, #A59585);
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.nmf-contact-text {
+  font-size: 1.15rem;
+  color: var(--color-footer-text, #E1E0E1);
+  line-height: 1.6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a.nmf-contact-text:hover {
+  color: var(--color-footer-accent, #A59585);
+}
+
+/* ==========================================================================
+   Copyright Bar (Totalmente Centrado)
+   ========================================================================== */
+.nmf-bottom {
+  background-color: var(--color-footer-bottom-bg, #130E07);
+  padding: 30px 0;
+  border-top: 1px solid var(--color-footer-border, rgba(165,149,133,0.15));
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.nmf-copyright {
+  font-size: 1.1rem;
+  color: var(--color-footer-accent, #A59585);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.nmf-legal {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.nmf-legal a {
+  font-size: 1.05rem;
+  color: var(--color-footer-link, #A59585);
+  opacity: 0.6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nmf-legal a:hover {
+  color: var(--color-footer-link-hover, #c4a47a);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Responsive (Ajuste para Móviles)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .nmf-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .nmf-col,
+  .nmf-links-col,
+  .nmf-contact-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .nmf-col h4 {
+    text-align: center;
+  }
+
+  .nmf-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nmf-links {
+    text-align: center;
+  }
+
+  .nmf-contact-list li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nmf-brand-col {
+    align-items: center;
+  }
+
+  .nmf-logo,
+  .nmf-description {
+    text-align: center;
+  }
+
+  .nmf-socials {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://newmetalart.com/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- About Us (Updated to match your route) -->
+  <url>
+    <loc>https://newmetalart.com/about-us</loc>
+    <lastmod>2026-05-09</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Services (Updated to match your route) -->
+  <url>
+    <loc>https://newmetalart.com/services</loc>
+    <lastmod>2026-05-09</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Projects (Aapke header mein Projects hai, route check kar lein agar ye /projects hai) -->
+  <url>
+    <loc>https://newmetalart.com/projects</loc>
+    <lastmod>2026-05-09</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Clientele -->
+  <url>
+    <loc>https://newmetalart.com/clientele</loc>
+    <lastmod>2026-05-09</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://newmetalart.com/gallery</loc>
+    <lastmod>2026-05-09</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Contact Us (Updated to match your route) -->
+  <url>
+    <loc>https://newmetalart.com/contact-us</loc>
+    <lastmod>2026-05-09</lastmod>
+    <priority>0.70</priority>
+  </url>
+</urlset>

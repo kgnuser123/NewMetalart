@@ -1,0 +1,232 @@
+/* AdminInquiries.css */
+.admin-inquiries-wrapper {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.inquiry-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  background: #2c7a4d;
+  color: white;
+  z-index: 1100;
+  animation: slideIn 0.3s ease;
+}
+.inquiry-toast.error {
+  background: #c53030;
+}
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.inquiries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.inquiries-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.inquiries-header p {
+  color: #64748b;
+}
+.stats-summary {
+  display: flex;
+  gap: 16px;
+}
+.stats-summary span {
+  background: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.inquiries-filter-bar {
+  margin-bottom: 24px;
+}
+.filter-tabs {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+.filter-tabs button {
+  background: none;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.filter-tabs button.active {
+  background: #1e293b;
+  color: white;
+}
+
+.inquiries-content {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.inquiries-list {
+  flex: 1;
+  min-width: 300px;
+  max-height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.inquiry-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.inquiry-card.unread {
+  border-left: 4px solid #1e293b;
+  background: #fafcff;
+}
+.inquiry-card.selected {
+  border-color: #1e293b;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.inquiry-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.inquiry-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.status-icon.unread { color: #1e293b; }
+.status-icon.read { color: #64748b; }
+.status-icon.replied { color: #2c7a4d; }
+.inquiry-actions {
+  display: flex;
+  gap: 8px;
+}
+.inquiry-actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: 0.2s;
+}
+.inquiry-actions button:hover {
+  color: #1e293b;
+}
+.inquiry-card-details p {
+  margin: 6px 0;
+  font-size: 0.85rem;
+}
+.inquiry-email {
+  color: #475569;
+}
+.inquiry-date {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.inquiry-detail-panel {
+  flex: 2;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  min-height: 60vh;
+}
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #94a3b8;
+}
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.detail-actions {
+  display: flex;
+  gap: 12px;
+}
+.reply-btn, .delete-btn, .copy-reply {
+  background: #f1f5f9;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 40px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+}
+.reply-btn:hover {
+  background: #1e293b;
+  color: white;
+}
+.delete-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.detail-info p {
+  margin: 8px 0;
+}
+.detail-message {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 16px;
+}
+.reply-suggestion {
+  margin-top: 24px;
+}
+.reply-suggestion textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  margin: 10px 0;
+}
+.copy-reply {
+  background: #1e293b;
+  color: white;
+}
+.no-inquiries {
+  text-align: center;
+  padding: 40px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .inquiries-content {
+    flex-direction: column;
+  }
+  .inquiries-list {
+    max-height: none;
+  }
+  .stats-summary {
+    margin-top: 10px;
+  }
+}

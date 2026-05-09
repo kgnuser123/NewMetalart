@@ -1,0 +1,368 @@
+/* ==========================================================================
+   PROJECT HOME – EXACTLY 3 SLIDES, SMOOTH ANIMATION, NO OVERLAY
+   ========================================================================== */
+
+.project-home-page {
+  padding: 80px 0;
+  background: #fefefe;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  overflow-x: clip;
+}
+
+.project-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 100px;
+  border: none;
+  outline: none;
+}
+
+/* HEADING */
+.project-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.project-heading h2 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #c7a252, #e4b363);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.heading-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dec-line {
+  width: 50px;
+  height: 1px;
+  background: #d4af6a;
+}
+
+.dec-diamond {
+  color: #c7a252;
+  font-size: 12px;
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
+/* SWIPER – NO OVERLAY, ANIMATIONS ACTIVE */
+.project-swiper {
+  overflow: visible !important;
+  padding: 20px 0 60px 0 !important;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  height: auto;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.swiper-slide-active {
+  z-index: 2;
+}
+
+.project-slide-link {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+
+/* CARDS – NO BLACK BORDERS */
+.project-slide-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.project-slide-link:hover .project-slide-card {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+  border-color: rgba(199, 162, 82, 0.3);
+}
+
+.slide-image {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #f5f3ef;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-slide-link:hover .slide-image img {
+  transform: scale(1.08);
+}
+
+.slide-info {
+  padding: 24px 20px 20px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-info h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.project-slide-link:hover .slide-info h3 {
+  color: #c7a252;
+}
+
+.slide-info p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.category-badge {
+  display: inline-block;
+  background: #f7f3eb;
+  color: #b28234;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 40px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-top: auto;
+  transition: all 0.2s;
+}
+
+.project-slide-link:hover .category-badge {
+  background: #c7a25220;
+  color: #a0712e;
+}
+
+/* PAGINATION */
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #d1d5db;
+  opacity: 0.6;
+  margin: 0 6px !important;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #c7a252 !important;
+  width: 28px !important;
+  opacity: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+/* RESPONSIVE – keep side spacing */
+@media (max-width: 1200px) {
+  .project-container { padding: 0 60px; }
+  .slide-image { height: 230px; }
+}
+
+@media (max-width: 992px) {
+  .project-container { padding: 0 40px; }
+}
+
+@media (max-width: 768px) {
+  .project-home-page { padding: 50px 0; }
+  .project-container { padding: 0 20px; }
+  .slide-image { height: 200px; }
+  .slide-info h3 { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .project-container { padding: 0 16px; }
+  .slide-info { padding: 18px; }
+  .project-slide-card { border-radius: 18px; }
+}
+
+/* REMOVE ALL BLACK BORDERS / OUTLINES */
+.project-slide-link:focus,
+.project-slide-link:active,
+.project-slide-card:focus,
+.swiper-slide:focus,
+img {
+  outline: none;
+  border: none;
+}
+/* ==========================================================================
+   PROJECT HOME – FIXED ALIGNMENT & SPACING
+   ========================================================================== */
+
+.project-home-page {
+  padding: 80px 0;
+  background: #fefefe;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  overflow-x: hidden; /* Badlaav: clip se hidden kiya taaki scroll na aaye */
+}
+
+.project-container {
+  max-width: 1400px; /* Thoda kam kiya taaki slides screen ke andar sahi dikhein */
+  margin: 0 auto;
+  padding: 0 40px; /* Padding kam ki taaki right space khatam ho jaye */
+  position: relative;
+}
+
+/* HEADING */
+.project-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.project-heading h2 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #c7a252, #e4b363);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* SWIPER FIXES */
+.project-swiper {
+  overflow: hidden !important; /* Right side space hatane ke liye isse hidden rakhein */
+  padding: 20px 0 60px 0 !important;
+  width: 100%;
+}
+
+.swiper-wrapper {
+  display: flex;
+  /* Swiper JS automatically handles alignment, but CSS helps with spacing */
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center; /* Slide ke andar ka content center karne ke liye */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-slide-link {
+  text-decoration: none;
+  display: block;
+  width: 100%; /* Ensure link takes full width of slide */
+  height: 100%;
+}
+
+/* CARDS */
+.project-slide-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Very light border */
+}
+
+.project-slide-link:hover .project-slide-card {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+  border-color: rgba(199, 162, 82, 0.3);
+}
+
+.slide-image {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #f5f3ef;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-info {
+  padding: 24px;
+  flex: 1;
+}
+
+.slide-info h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+/* PAGINATION - Center aligned */
+.swiper-pagination {
+  bottom: 10px !important;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.swiper-pagination-bullet-active {
+  background: #c7a252 !important;
+  width: 28px !important;
+  border-radius: 10px !important;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  .project-container { padding: 0 20px; }
+  .slide-image { height: 220px; }
+}

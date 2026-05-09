@@ -1,0 +1,210 @@
+/* PageVisibilitySettings.css – Modern Admin Panel Style */
+
+.page-visibility-container {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #eef2f6;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-visibility-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.page-visibility-container > p {
+  color: #5a6a7a;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  border-left: 3px solid #b88b4a;
+  padding-left: 16px;
+}
+
+/* Table styles */
+.page-visibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.page-visibility-table thead tr {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.page-visibility-table th {
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #334155;
+}
+
+.page-visibility-table td {
+  padding: 16px;
+  border-bottom: 1px solid #edf2f7;
+  vertical-align: middle;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+.page-visibility-table tr:hover td {
+  background-color: #fefcf8;
+}
+
+/* Toggle switch (custom checkbox) */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background-color: #cbd5e1;
+  border-radius: 40px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: #b88b4a;
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(22px);
+}
+
+.toggle-label {
+  font-weight: 500;
+  font-size: 0.85rem;
+  min-width: 55px;
+}
+
+.status-visible {
+  color: #2e7d32;
+  background: #e8f5e9;
+  padding: 4px 12px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-hidden {
+  color: #c62828;
+  background: #ffebee;
+  padding: 4px 12px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Info note */
+.page-visibility-note {
+  background: #fefce8;
+  border-left: 3px solid #eab308;
+  padding: 14px 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #854d0e;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-visibility-note::before {
+  content: '💡';
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-visibility-container {
+    padding: 20px;
+  }
+  .page-visibility-table,
+  .page-visibility-table thead,
+  .page-visibility-table tbody,
+  .page-visibility-table tr,
+  .page-visibility-table th,
+  .page-visibility-table td {
+    display: block;
+  }
+  .page-visibility-table thead {
+    display: none;
+  }
+  .page-visibility-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 12px;
+    background: white;
+  }
+  .page-visibility-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .page-visibility-table td:last-child {
+    border-bottom: none;
+  }
+  .page-visibility-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    width: 40%;
+    color: #475569;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-visibility-container h2 {
+    font-size: 1.4rem;
+  }
+  .toggle-slider {
+    width: 40px;
+    height: 20px;
+  }
+  .toggle-slider::before {
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+  }
+  .toggle-switch input:checked + .toggle-slider::before {
+    transform: translateX(20px);
+  }
+}

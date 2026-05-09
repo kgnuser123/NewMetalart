@@ -1,0 +1,169 @@
+/* --- MAIN CONTAINER --- */
+.hero-banner-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;            /* full viewport height */
+  background: #130E07;
+ 
+}
+
+/* --- BANNER SLIDE (static) --- */
+.hero-banner {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* content starts at left edge */
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark Overlay for Readability */
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(19, 14, 7, 0.9) 0%, rgba(19, 14, 7, 0.4) 50%, transparent 100%);
+  z-index: 1;
+}
+
+/* --- CONTAINER RESET – no left padding/margin --- */
+.hero-banner .container {
+  width: 100%;
+  margin: 0 17%;
+  padding: 0;
+}
+
+/* --- CONTENT – strictly left aligned, no left space --- */
+.banner-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 5% 0 0;        /* right padding only – NO left padding */
+  margin: 0;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+.accent-text {
+  display: inline-block;
+  color: #A59585;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-left: 4px solid #A59585;
+  padding-left: 15px;       /* visual indent inside text, not from container edge */
+}
+
+.main-heading {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  color: #E1E0E1;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #E1E0E1;
+  opacity: 0.8;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* --- BUTTON --- */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 45px;
+  background: #A59585;
+  color: #130E07;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  background: #E1E0E1;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.cta-button .arrow {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .arrow {
+  transform: translateX(8px);
+}
+
+/* --- ANIMATIONS (unchanged) --- */
+.fade-in { animation: fadeInEffect 1.5s ease-in-out; }
+.slide-up { animation: slideUp 1s ease-out forwards; }
+.slide-up-delayed { animation: slideUp 1s ease-out 0.3s forwards; opacity: 0; }
+.slide-up-more-delayed { animation: slideUp 1s ease-out 0.5s forwards; opacity: 0; }
+.slide-up-button { animation: slideUp 1s ease-out 0.7s forwards; opacity: 0; }
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInEffect {
+  from { filter: blur(10px); opacity: 0; }
+  to { filter: blur(0); opacity: 1; }
+}
+
+/* --- RESPONSIVE – keep zero left space on all devices --- */
+@media (max-width: 768px) {
+  .hero-banner-container {
+    height: 70vh;
+  }
+  .main-heading {
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  .accent-text {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+  }
+  .banner-content {
+    padding: 0 5% 0 0;      /* keep right padding only */
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 2rem;
+  }
+  .cta-button {
+    padding: 12px 28px;
+    font-size: 0.8rem;
+  }
+  .banner-content {
+    padding-right: 5%;
+  }
+}
+
+/* --- Dots styles removed (not needed in static banner) --- */

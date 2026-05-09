@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Admin aur Private folders ko block karne ke liye
+Disallow: /admin/
+Disallow: /login/
+
+# Sitemap ka location
+Sitemap: https://newmetalart.com/sitemap.xml

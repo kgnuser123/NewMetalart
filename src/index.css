@@ -1,0 +1,34 @@
+*{
+     font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
+  /* Fallback defaults – will be replaced by dynamic values */
+  --color-navbar-bg: #1e1e2a;
+  --color-navbar-text: #ffffff;
+  --color-navbar-hover: #b88b4a;
+  --color-sidebar-bg: #2d2d3a;
+  --color-sidebar-text: #e2e2e6;
+  --color-sidebar-icon: #b88b4a;
+  --color-sidebar-active-bg: rgba(184, 139, 74, 0.15);
+  --color-sidebar-active-text: #b88b4a;
+  --color-main-bg: #f8f9fc;
+  --color-main-text: #1e1e2a;
+  --color-heading-color: #b88b4a;
+  --color-primary-btn-bg: #b88b4a;
+  --color-primary-btn-text: #ffffff;
+  --color-primary-btn-hover: #9c6e3e;
+  --color-secondary-btn-bg: transparent;
+  --color-secondary-btn-text: #b88b4a;
+  --color-secondary-btn-hover: rgba(184, 139, 74, 0.1);
+  --color-card-bg: #ffffff;
+  --color-card-border: rgba(0, 0, 0, 0.08);
+  --color-footer-bg: #1e1e2a;
+  --color-footer-text: #cbd5e1;
+  --color-footer-link: #b88b4a;
+  --color-link-color: #b88b4a;
+  --color-link-hover: #9c6e3e;
+  --color-input-border: rgba(0, 0, 0, 0.15);
+  --color-input-focus: #b88b4a;
+}

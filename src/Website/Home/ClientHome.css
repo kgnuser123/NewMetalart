@@ -1,0 +1,268 @@
+/* ========== NMC CLIENT SECTION – FOCUSED & ATTRACTIVE ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.nmc-client-section {
+  padding: 80px 0;
+  background: radial-gradient(circle at 10% 30%, #fefcf8 0%, #f6f4ef 100%);
+  position: relative;
+  overflow-x: hidden; /* Bahar nikalte slides ko hide karne ke liye screen level par */
+}
+
+/* Subtle animated background overlay (geometric pattern) */
+.nmc-client-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><path fill="none" d="M0,0 L100,0 M0,10 L100,10 M0,20 L100,20 M0,30 L100,30 M0,40 L100,40 M0,50 L100,50 M0,60 L100,60 M0,70 L100,70 M0,80 L100,80 M0,90 L100,90 M0,100 L100,100" stroke="%23b88b4a" stroke-width="0.5"/></svg>');
+  background-repeat: repeat;
+  pointer-events: none;
+  animation: subtleShift 20s linear infinite;
+}
+
+@keyframes subtleShift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
+
+.nmc-client-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ========== HEADING – FOCUSED & BOLD ========== */
+.nmc-client-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.nmc-client-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+}
+
+.nmc-client-gold {
+  background: linear-gradient(135deg, #b88b4a, #e6c27a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.nmc-client-outline {
+  background: linear-gradient(135deg, #2d2d3a, #1a1a2e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  position: relative;
+}
+
+.nmc-client-line {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #b88b4a, #e6c27a, #b88b4a);
+  margin: 20px auto 20px;
+  border-radius: 4px;
+}
+
+.nmc-client-subtitle {
+  color: #5a5a6e;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ========== EDGE-TO-EDGE CAROUSEL WRAPPER ========== */
+.nmc-client-carousel-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 40px;
+  overflow: hidden; /* Slider viewport ke bahar scrollbar na banaye */
+}
+
+/* Swiper Centering & Visible Slides */
+.nmc-client-carousel {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 20px 0 60px !important;
+  overflow: visible !important; /* Dono corners par transparently overflow allow karne ke liye */
+}
+
+/* Base swiper track adjustment */
+.swiper-wrapper {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Individual Slides Adjustment */
+.swiper-slide {
+  height: auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-sizing: border-box;
+}
+
+/* ========== CAROUSEL CARD ========== */
+.nmc-client-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(2px);
+  border-radius: 32px;
+  padding: 32px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(184, 139, 74, 0.15);
+  height: 250px;
+  width: 100%; /* Apne parent column ki poori space fill karega */
+  cursor: pointer;
+}
+
+.nmc-client-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 40px rgba(184, 139, 74, 0.12);
+  border-color: #d4a373;
+  background: white;
+}
+
+/* Logo Wrapper & Image Aspect Ratio Fix */
+.nmc-client-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nmc-client-logo-wrapper img {
+  max-width: 85%;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(10%); /* Halka sa clean uniformity dene ke liye */
+  transition: all 0.3s ease;
+}
+
+.nmc-client-card:hover .nmc-client-logo-wrapper img {
+  transform: scale(1.05);
+  filter: grayscale(0%) drop-shadow(0 8px 16px rgba(184, 139, 74, 0.15));
+}
+
+/* ========== SWIPER PAGINATION (GLOWING DOTS) ========== */
+.swiper-pagination {
+  bottom: 10px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #cbd5e1;
+  opacity: 1;
+  transition: all 0.2s;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #b88b4a;
+  width: 28px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(184, 139, 74, 0.5);
+}
+
+/* ========== LOADER & ERROR STATE ========== */
+.nmc-client-loader, .nmc-client-error, .nmc-client-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+  background: radial-gradient(circle at center, #fefcf8, #f6f4ef);
+}
+
+.nmc-client-spinner {
+  width: 55px;
+  height: 55px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #b88b4a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.nmc-client-loader p {
+  color: #5a5a6e;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.nmc-client-error button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  border: 1px solid #b88b4a;
+  background: transparent;
+  color: #b88b4a;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.nmc-client-error button:hover {
+  background: #b88b4a;
+  color: white;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+@media (max-width: 1280px) {
+  .nmc-client-container { padding: 0 30px; }
+  .nmc-client-title { font-size: 2.4rem; }
+  .nmc-client-card { height: 160px; padding: 28px 15px; }
+}
+
+@media (max-width: 1024px) {
+  .nmc-client-section { padding: 60px 0; }
+  .nmc-client-title { font-size: 2.2rem; }
+  .nmc-client-card { height: 150px; }
+  .nmc-client-logo-wrapper img { max-height: 80px; }
+}
+
+@media (max-width: 768px) {
+  .nmc-client-section { padding: 50px 0; }
+  .nmc-client-title { font-size: 1.9rem; }
+  .nmc-client-subtitle { font-size: 0.9rem; }
+  .nmc-client-card { height: 140px; border-radius: 24px; }
+  .nmc-client-logo-wrapper img { max-height: 70px; }
+  .nmc-client-carousel { padding-bottom: 45px !important; }
+}
+
+@media (max-width: 480px) {
+  .nmc-client-title { font-size: 1.6rem; }
+  .nmc-client-card { height: 125px; border-radius: 20px; padding: 18px 12px; }
+  .nmc-client-logo-wrapper img { max-height: 55px; }
+  .swiper-pagination-bullet { width: 8px; height: 8px; }
+  .swiper-pagination-bullet-active { width: 20px; }
+}

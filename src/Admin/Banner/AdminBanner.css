@@ -1,0 +1,645 @@
+/* PRO LEVEL LIGHT THEME - Admin Banner Styles */
+.admin-banner-wrapper {
+  padding: 32px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+}
+.admin-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-delete-banner {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-delete-banner:hover {
+  background-color: #c82333;
+}
+
+.remove-img-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(220, 53, 69, 0.9);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.admin-banner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.toast-message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 24px;
+  border-radius: 40px;
+  background: #2c7a4d;
+  color: white;
+  z-index: 1100;
+  animation: fadeOut 3s ease forwards;
+}
+.toast-message.error {
+  background: #c53030;
+}
+@keyframes fadeOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  85% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+.btn-publish-banner {
+  background: linear-gradient(105deg, #b8925c 0%, #a07a48 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(160, 122, 72, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-publish-banner:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(105deg, #c9a16a 0%, #b58b54 100%);
+  box-shadow: 0 12px 24px rgba(160, 122, 72, 0.25);
+}
+
+.btn-publish-banner:active {
+  transform: translateY(1px);
+}
+
+.admin-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.banner-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(0px);
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(203, 213, 225, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.banner-card:hover {
+  border-color: rgba(184, 146, 92, 0.3);
+  box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.form-group-pro {
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.form-group-pro label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.form-group-pro input,
+.form-group-pro textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  border: 1.5px solid #e2edf2;
+  border-radius: 18px;
+  outline: none;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.form-group-pro input:focus,
+.form-group-pro textarea:focus {
+  border-color: #b8925c;
+  box-shadow: 0 0 0 4px rgba(184, 146, 92, 0.15);
+}
+
+.form-group-pro textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Image Upload Pro Area */
+.upload-box-pro {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.banner-preview-area {
+  width: 100%;
+  height: 220px;
+  background: #fefcf7;
+  border-radius: 24px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px dashed #cfdfe9;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.banner-preview-area:hover {
+  border-color: #b8925c;
+  background: #fffaf2;
+}
+
+.banner-preview-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.banner-preview-area:hover img {
+  transform: scale(1.02);
+}
+
+.upload-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1f2a3e;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.upload-btn-secondary:hover {
+  background: #2d3a4e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+.cta-flex {
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* additional fine-tuning for rows and responsiveness */
+@media (max-width: 780px) {
+  .admin-banner-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+  .admin-banner-wrapper {
+    padding: 20px;
+  }
+  .banner-card {
+    padding: 20px;
+  }
+}
+
+/* subtle placeholder style */
+::placeholder {
+  color: #a0afbc;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid #b8925c;
+  outline-offset: 2px;
+}
+/* Only banner list size fix - no theme changes */
+
+.banners-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Har ek banner item ko chhota aur horizontal banayenge */
+.banner-list-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: inherit;   /* apna background rahega */
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);  /* light border, aap badal sakte hain */
+}
+
+/* Image ka size fix - yahi main fix hai */
+.banner-list-item img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Info text ko limit karein */
+.banner-list-item .info {
+  flex: 1;
+}
+
+.banner-list-item .info h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.banner-list-item .info p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Delete button chhota rahe */
+.del-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 6px;
+}
+/* Custom Modal Popup - Only for delete confirmation */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: #1e1e2e;
+  padding: 2rem;
+  border-radius: 24px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid #ffb34730;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  color: #ffb347;
+}
+
+.modal-content p {
+  margin-bottom: 1.8rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal-cancel, .modal-confirm {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-cancel {
+  background: #2a2a3a;
+  color: #ccc;
+}
+
+.modal-cancel:hover {
+  background: #3a3a4a;
+}
+
+.modal-confirm {
+  background: #dc3545;
+  color: white;
+}
+
+.modal-confirm:hover {
+  background: #c82333;
+  transform: scale(1.02);
+}
+/* Custom Modal Popup */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: #1e1e2e;
+  padding: 2rem;
+  border-radius: 24px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid #ffb34730;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  color: #ffb347;
+}
+
+.modal-content p {
+  margin-bottom: 1.8rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal-cancel, .modal-confirm {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-cancel {
+  background: #2a2a3a;
+  color: #ccc;
+}
+
+.modal-cancel:hover {
+  background: #3a3a4a;
+}
+
+.modal-confirm {
+  background: #dc3545;
+  color: white;
+}
+
+.modal-confirm:hover {
+  background: #c82333;
+  transform: scale(1.02);
+}
+/* Light / White Theme for Banner Manager */
+.banner-list-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;          /* white background */
+  border: 1px solid #e0e0e0;    /* light gray border */
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.banner-list-item .info h4 {
+  color: #222;                  /* dark heading */
+  margin: 0 0 5px;
+}
+
+.banner-list-item .info p {
+  color: #555;                  /* medium gray */
+  margin: 0;
+}
+
+.list-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.edit-btn, .del-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.edit-btn {
+  color: #2c7a4d;               /* dark green */
+}
+.edit-btn:hover {
+  background: rgba(44, 122, 77, 0.1);
+}
+
+.del-btn {
+  color: #c62828;               /* dark red */
+}
+.del-btn:hover {
+  background: rgba(198, 40, 40, 0.1);
+}
+
+/* Edit Modal (white background) */
+.edit-modal {
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.edit-modal h3 {
+  color: #222;
+  margin-top: 0;
+}
+
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+  color: #222;
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus {
+  outline: none;
+  border-color: #2c7a4d;
+}
+
+.edit-image-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.edit-image-preview img {
+  max-width: 100%;
+  max-height: 150px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Modal Overlay (semi‑transparent dark) – keep as is, but ensure content is white */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-cancel,
+.modal-confirm {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.modal-cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.modal-cancel:hover {
+  background: #ccc;
+}
+
+.modal-confirm {
+  background: #c62828;
+  color: white;
+}
+
+.modal-confirm:hover {
+  background: #b71c1c;
+}
+
+/* Additional banner manager container (if needed) */
+.admin-banner-wrapper {
+  background: #f5f7fa;        /* very light gray page background */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.admin-banner-header h1 {
+  color: #1e2a3a;
+}
+
+.admin-banner-header p {
+  color: #4a5568;
+}
+
+.banner-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.banner-card h3 {
+  color: #2d3748;
+}
+
+.btn-publish-banner {
+  background: #2c7a4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-publish-banner:hover {
+  background: #1e5a3a;
+}

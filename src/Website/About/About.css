@@ -1,0 +1,1095 @@
+/* ========== ABOUT PAGE – PREMIUM LIGHT THEME (ENHANCED) ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bronze: #b88b4a;
+  --bronze-light: #d4a373;
+  --bronze-dark: #9c6e3e;
+  --text-dark: #1e293b;
+  --text-muted: #5a6e8a;
+  --bg-light: #fefefe;
+  --bg-off: #fafbfc;
+  --border-light: #e9edf2;
+  --shadow: 0 8px 24px rgba(0,0,0,0.02);
+  --shadow-md: 0 12px 30px -8px rgba(0,0,0,0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nma-pro-about {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-dark);
+  background: var(--bg-off);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+/* Make Mission & Vision icons bronze/brown */
+.abt-mv-card .mv-icon {
+  color: var(--bronze);       /* bronze/brown background */
+              /* icon color */
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 4rem;
+  margin-bottom: 20px;
+ 
+  transition: transform 0.3s;
+}
+
+
+/* ========== SECTION TITLES ========== */
+.abt-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+.abt-section-title.center {
+  text-align: center;
+}
+.bronze {
+  color: var(--bronze);
+}
+.bronze-glow {
+  background: linear-gradient(135deg, #fff, var(--bronze), var(--bronze-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ========== 1. HERO BANNER ========== */
+.abt-hero {
+  position: relative;
+  height: 0vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a2e, #2d2d3a);
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+.abt-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=1600') center/cover;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+.abt-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+.abt-hero-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  background: rgba(184, 139, 74, 0.25);
+  padding: 6px 18px;
+  border-radius: 40px;
+  color: var(--bronze-light);
+  margin-bottom: 20px;
+}
+.abt-hero-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+}
+.abt-hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+.abt-btn-primary, .abt-btn-outline {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 0 8px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.abt-btn-primary {
+  background: var(--bronze);
+  color: white;
+}
+.abt-btn-primary:hover {
+  background: var(--bronze-dark);
+  transform: translateY(-2px);
+}
+.abt-btn-outline {
+  border: 1px solid var(--bronze);
+  color: white;
+}
+.abt-btn-outline:hover {
+  background: rgba(184, 139, 74, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ========== 2. OUR STORY (IMAGE LARGER & ALIGNED) ========== */
+.abt-story {
+  padding: 80px 0;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+.abt-story-grid {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+.abt-story-text {
+  flex: 1.2;
+}
+.abt-story-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.story-badge {
+  margin-top: 25px;
+  background: #f8f3ec;
+  border-left: 4px solid var(--bronze);
+  padding: 12px 24px;
+  display: inline-block;
+}
+/* IMAGE – LARGER & CENTERED */
+.abt-story-image {
+  flex: 1;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+.abt-story-image img {
+  width: 100%;
+  max-width: 580px;   /* makes image larger but never exceeds container */
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 25px 40px -12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+.image-border {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: auto;
+  bottom: auto;
+  width: calc(100% - 36px);
+  height: calc(100% - 36px);
+  border: 2px solid var(--bronze);
+  border-radius: 32px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+/* Hover effect – image scales slightly, border moves closer */
+.abt-story-image:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 30px 50px -15px rgba(0,0,0,0.12);
+}
+.abt-story-image:hover .image-border {
+  top: 12px;
+  left: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+}
+
+/* ========== 3. MISSION & VISION ========== */
+.abt-mv {
+  padding: 60px 0;
+  background: var(--bg-off);
+  border-bottom: 1px solid var(--border-light);
+}
+.abt-mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+.abt-mv-card {
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-light);
+}
+.mv-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+.abt-mv-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+.abt-mv-card p {
+  color: var(--text-muted);
+}
+
+/* ========== 4. WHAT WE DO ========== */
+.abt-whatwedo {
+  padding: 70px 0;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+.wwd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 30px;
+}
+.wwd-card {
+  background: white;
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: 0.25s;
+  border: 1px solid var(--border-light);
+}
+.wwd-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--bronze-light);
+  box-shadow: 0 12px 24px rgba(184, 139, 74, 0.08);
+}
+.wwd-icon {
+  font-size: 2.8rem;
+  color: var(--bronze);
+  margin-bottom: 16px;
+}
+.wwd-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+.wwd-card p {
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.wwd-features {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+  text-align: left;
+}
+.wwd-features li {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+.wwd-features li svg {
+  color: var(--bronze);
+  font-size: 0.8rem;
+}
+
+/* ========== 5. CORE VALUES ========== */
+.abt-values {
+  padding: 70px 0;
+  background: var(--bg-off);
+  border-bottom: 1px solid var(--border-light);
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+.value-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: 0.2s;
+  border: 1px solid var(--border-light);
+}
+.value-icon {
+  font-size: 3.2rem;
+  color: var(--bronze);
+  margin-bottom: 16px;
+}
+.value-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.value-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ========== 6. TIMELINE ========== */
+.abt-timeline {
+  padding: 70px 0;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+.timeline-list {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 35px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--bronze);
+}
+.timeline-item {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+}
+.timeline-year {
+  width: 80px;
+  font-weight: 700;
+  color: var(--bronze);
+  font-size: 1.1rem;
+}
+.timeline-dot {
+  position: absolute;
+  left: 31px;
+  width: 12px;
+  height: 12px;
+  background: var(--bronze);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+.timeline-content {
+  padding-left: 60px;
+}
+.timeline-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.timeline-content p {
+  color: var(--text-muted);
+}
+
+/* ========== 7. MEET OUR FOUNDER (no slider) ========== */
+.abt-founder {
+  padding: 70px 0;
+  background: var(--bg-off);
+  border-bottom: 1px solid var(--border-light);
+}
+.founder-card {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: white;
+  border-radius: 32px;
+  padding: 40px 48px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  transition: 0.25s;
+}
+.founder-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--bronze);
+  box-shadow: 0 20px 30px -10px rgba(184, 139, 74, 0.1);
+}
+/* 1. Contenedor de la tarjeta: Centrado vertical */
+.founder-card {
+  display: flex;
+  align-items: center; /* Alinea verticalmente imagen y texto */
+  gap: 50px;           /* Separación elegante */
+}
+
+/* 2. Columna de la imagen */
+.founder-image {
+  flex: 1.1;           /* Proporción de la columna */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* 3. Estilo de la Imagen (Ahora Rectangular Vertical) */
+.founder-image img {
+  width: 100%;
+  max-width: 450px;    /* Límite de ancho para que no se desproporcione */
+  
+  /* CAMBIO CLAVE: Cambiado de 1/1 (cuadrado) a 3/4 o 4/5 (rectángulo vertical) */
+  aspect-ratio: 3 / 4; 
+  
+  object-fit: cover;   /* Evita que la foto de Manawar se deforme */
+  border-radius: 8px;  /* Bordes suaves */
+  border: 4px solid var(--bronze);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Columna de texto */
+.founder-info {
+  flex: 1.5;
+}
+
+/* 5. Responsive para móviles */
+@media (max-width: 992px) {
+  .founder-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-image img {
+    max-width: 320px;  /* Más contenida en pantallas pequeñas */
+    aspect-ratio: 1 / 1; /* En móviles vuelve a ser cuadrada para que no ocupe tanta pantalla */
+  }
+}
+.founder-info {
+  flex: 1.3;
+}
+.founder-info h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+.founder-role {
+  font-size: 1rem;
+  color: var(--bronze);
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.founder-exp {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.founder-quote {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #2d3a4b;
+  font-style: italic;
+  margin-bottom: 16px;
+  padding-left: 20px;
+  border-left: 3px solid var(--bronze);
+}
+.founder-signature {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  letter-spacing: 1px;
+}
+
+/* ========== 8. WHY CHOOSE US ========== */
+.abt-why {
+  padding: 70px 0;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+.why-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+}
+.why-text {
+  flex: 1;
+}
+.features-list {
+  margin-top: 24px;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+.feature svg {
+  color: var(--bronze);
+  font-size: 1.1rem;
+}
+.why-img {
+  flex: 1;
+}
+.why-img img {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: var(--shadow-md);
+}
+
+/* ========== 9. CTA ========== */
+.abt-cta {
+  padding: 70px 0;
+  background: linear-gradient(135deg, #1a1a2e, #2d2d3a);
+}
+.cta-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  padding: 48px;
+  border-radius: 40px;
+  border: 1px solid rgba(184, 139, 74, 0.3);
+}
+.cta-card h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 24px;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bronze);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.cta-btn:hover {
+  background: var(--bronze-dark);
+  transform: translateY(-2px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .abt-hero-title {
+    font-size: 3rem;
+  }
+  .abt-section-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .abt-story-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .abt-story-image img {
+    max-width: 100%;
+  }
+  .image-border {
+    top: 12px;
+    left: 12px;
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+  }
+  .founder-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  .founder-quote {
+    text-align: left;
+  }
+  .founder-image img {
+    width: 160px;
+    height: 160px;
+  }
+  .abt-hero {
+    height: 70vh;
+    min-height: 500px;
+  }
+  .abt-hero-title {
+    font-size: 2.2rem;
+  }
+  .timeline-list::before {
+    left: 20px;
+  }
+  .timeline-year {
+    width: 60px;
+    font-size: 0.9rem;
+  }
+  .timeline-content {
+    padding-left: 50px;
+  }
+  .why-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .cta-card {
+    padding: 32px 20px;
+  }
+  .cta-card h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .wwd-grid, .values-grid {
+    grid-template-columns: 1fr;
+  }
+  .founder-card {
+    padding: 20px;
+  }
+}
+
+/* OurStory.css – Premium Story Section 
+   Fully responsive + image fits perfectly */
+
+.our-story-section {
+  padding: 80px 0;
+  background: #fafafc;
+}
+
+.story-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Grid: equal width, both columns stretch to same height */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+/* Text Column */
+.story-text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertically centre text content */
+}
+
+.story-heading {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #b88b4a, #e4b876);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heading-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #b88b4a, #e4b876);
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.story-content p {
+  color: #5a5a6e;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+}
+
+.story-badge {
+  margin-top: 30px;
+  display: inline-block;
+  background: rgba(184, 139, 74, 0.08);
+  border-left: 5px solid #b88b4a;
+  padding: 14px 28px;
+  border-radius: 0 12px 12px 0;
+  backdrop-filter: blur(2px);
+}
+
+.story-badge span {
+  font-weight: 600;
+  color: #1a1a2e;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+
+/* ========== IMAGE COLUMN – PERFECT FIT ========== */
+.story-image {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.image-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 30px 45px -20px rgba(0,0,0,0.3),
+              0 0 0 1px rgba(184,139,74,0.2) inset;
+  transition: all 0.4s ease;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fills the area without distortion */
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover zoom */
+.image-frame:hover img {
+  transform: scale(1.05);
+}
+
+.image-frame:hover {
+  box-shadow: 0 40px 60px -20px rgba(0,0,0,0.4);
+}
+
+/* Animated border behind */
+.image-border-animation {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: -24px;
+  bottom: -24px;
+  border: 3px solid rgba(184,139,74,0.6);
+  border-radius: 36px;
+  z-index: -1;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.image-frame:hover .image-border-animation {
+  top: 16px;
+  left: 16px;
+  right: -16px;
+  bottom: -16px;
+  border-color: #b88b4a;
+  box-shadow: 0 0 20px rgba(184,139,74,0.4);
+}
+
+/* Overlay & corner accent */
+.image-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(184,139,74,0.12) 0%, rgba(255,255,255,0) 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.image-frame:hover::after {
+  opacity: 1;
+}
+
+.image-frame::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-top: 3px solid #b88b4a;
+  border-left: 3px solid #b88b4a;
+  border-radius: 16px 0 0 0;
+  z-index: 2;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+.image-frame:hover::before {
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+@media (max-width: 992px) {
+  .story-grid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-story-section {
+    padding: 50px 0;
+  }
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .story-image {
+    height: auto;
+    order: -1;               /* image appears above text on mobile */
+    max-height: 60vh;        /* limit height on mobile */
+  }
+  .image-frame {
+    height: auto;
+    min-height: 300px;       /* ensure decent height on small screens */
+  }
+  .image-frame img {
+    height: 100%;
+    object-fit: cover;       /* still cover, but constrained by container */
+  }
+  .image-border-animation {
+    top: 15px;
+    left: 15px;
+    right: -15px;
+    bottom: -15px;
+  }
+  .image-frame::before {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-badge span {
+    font-size: 0.85rem;
+  }
+  .heading-underline {
+    width: 70px;
+  }
+  .image-frame {
+    min-height: 220px;       /* smaller but still visible */
+  }
+  .image-frame img {
+    object-fit: cover;
+  }
+}
+
+/* For very large screens, keep image sharp */
+@media (min-width: 1600px) {
+  .story-container {
+    max-width: 1600px;
+  }
+  .image-frame img {
+    object-fit: cover;
+  }
+}
+/* ==========================================================================
+   Sección del Fundador - Estilo Editorial Moderno
+   ========================================================================== */
+.abt-founder-modern {
+  padding: 100px 24px;
+  background-color: #faf9f6; /* Fondo blanco roto/cálido premium */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+.founder-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Cabecera de la sección */
+.founder-section-header {
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.founder-pretitle {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #c29b63; /* Color bronce */
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.founder-section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.founder-section-title .bronze-accent {
+  color: #c29b63;
+  position: relative;
+}
+
+.accent-line {
+  width: 80px;
+  height: 3px;
+  background-color: #c29b63;
+  margin-top: 10px;
+}
+
+/* Layout Asimétrico de la Tarjeta */
+.founder-card-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr; /* La columna de texto es ligeramente más ancha */
+  gap: 60px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Columna de Imagen (Con Marco Flotante Decorativo)
+   ========================================================================== */
+.founder-image-wrapper {
+  position: relative;
+  padding: 15px;
+}
+
+.founder-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Formato vertical tipo retrato */
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.founder-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(15%); /* Efecto visual elegante para retratos corporativos */
+  transition: filter 0.5s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.founder-image-frame:hover img {
+  filter: grayscale(0%);
+}
+
+/* Marco metálico decorativo que sobresale por detrás de la foto */
+.metal-frame-deco {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  border: 2px solid #c29b63;
+  border-radius: 6px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Columna de Información e Historia
+   ========================================================================== */
+.founder-info-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #777777;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.founder-display-name {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+}
+
+.founder-display-role {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #c29b63;
+  margin: 0 0 30px 0;
+  letter-spacing: 0.5px;
+}
+
+/* Párrafos de la Biografía */
+.founder-narrative p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.founder-narrative p:last-child {
+  margin-bottom: 0;
+}
+
+/* Cita Destacada */
+.founder-testimonial-quote {
+  position: relative;
+  margin: 35px 0 0 0;
+  padding: 25px 30px;
+  background-color: #ffffff;
+  border-left: 4px solid #c29b63;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.quote-mark {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 4rem;
+  font-family: serif;
+  color: rgba(194, 155, 99, 0.15); /* Bronce translúcido */
+  line-height: 1;
+}
+
+.founder-testimonial-quote p {
+  position: relative;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.5;
+  margin: 0;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Adaptabilidad para Móviles (Responsive)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .founder-card-layout {
+    grid-template-columns: 1fr; /* Una sola columna en tablets y móviles */
+    gap: 45px;
+  }
+
+  .founder-image-wrapper {
+    max-width: 450px;
+    margin: 0 auto; /* Centrar la imagen del fundador en pantallas medianas */
+  }
+
+  .founder-section-header {
+    text-align: center;
+  }
+  
+  .accent-line {
+    margin: 10px auto 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .abt-founder-modern {
+    padding: 60px 16px;
+  }
+
+  .founder-section-title {
+    font-size: 2.2rem;
+  }
+
+  .founder-display-name {
+    font-size: 2rem;
+  }
+
+  .founder-testimonial-quote {
+    padding: 20px;
+  }
+}

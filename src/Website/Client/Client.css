@@ -1,0 +1,287 @@
+/* Client.css – 5 Columns, Flexbox, Last Row Centered, Larger Logos */
+
+.nmc-client-page {
+  background: #fefefe;
+  padding: 180px 0 60px;
+  min-height: 60vh;
+  width: 100%;
+}
+
+/* ========== CONTAINER: FULL WIDTH WITH 100px SIDE PADDING ========== */
+.nmc-container {
+  width: 100% !important;
+  max-width: 100% !important; /* Standard 1400px ki limit ko remove kiya */
+  padding: 0 100px !important; /* Left aur Right se exactly 100px ka space */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ========== STYLISH HEADING SECTION ========== */
+.nmc-heading {
+  text-align: center;
+  margin-bottom: 55px;
+  position: relative;
+}
+
+.nmc-heading h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, #1a1a2e 0%, #3a3a4e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.nmc-gold {
+  background: linear-gradient(135deg, #b88b4a, #e6c27a, #b88b4a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: goldShine 3s infinite ease-in-out;
+}
+
+@keyframes goldShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Decorative underline – double line with diamond */
+.nmc-heading-underline {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #b88b4a, #d4a373, #b88b4a);
+  margin: 20px auto 16px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.nmc-heading-underline::before,
+.nmc-heading-underline::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 1px;
+  background: #b88b4a;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nmc-heading-underline::before {
+  left: -40px;
+}
+
+.nmc-heading-underline::after {
+  right: -40px;
+}
+
+.nmc-heading p {
+  color: #5a6e8a;
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  padding: 0 15px;
+}
+
+/* Optional: add a subtle floating icon above the heading */
+.nmc-heading::before {
+  content: '✦';
+  display: block;
+  font-size: 1.2rem;
+  color: #b88b4a;
+  margin-bottom: 8px;
+  opacity: 0.8;
+  letter-spacing: 4px;
+}
+
+/* ========== FLEXBOX GRID (5 COLUMNS & CENTERING) ========== */
+.nmc-grid-4col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Last row ke logos automatically center aligned rahenge */
+  gap: 30px;               /* Cards ke beech ka gap */
+  width: 100%;
+}
+
+/* ========== CARD STYLING & WIDTH CALCULATION ========== */
+.nmc-card {
+  /* 5 columns layout: (100% - Total gap space) / 5 */
+  width: calc((100% - (30px * 4)) / 5); 
+  min-width: 240px; /* Responsive safety ke liye minimum width */
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.nmc-card-inner {
+  background: white;
+  border-radius: 28px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  border: 1px solid #eef2f6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+  height: 100%; /* Sabhi cards ki height uniform rahegi */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nmc-card-inner:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 35px rgba(184, 139, 74, 0.12);
+  border-color: #d4a373;
+}
+
+/* ========== LOGO WRAPPER ========== */
+.nmc-logo-wrapper {
+  height: 150px; /* Thoda optimize kiya taaki row standard lage */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.nmc-logo-wrapper img {
+  max-width: 90%;
+  max-height: 110px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.nmc-card-inner:hover .nmc-logo-wrapper img {
+  transform: scale(1.05);
+}
+
+/* ========== LOADER & ERROR STATE ========== */
+.nmc-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+.nmc-industrial-loader {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #b88b4a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.nmc-industrial-loader::after {
+  content: '⚙️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4rem;
+  opacity: 0.6;
+}
+
+.nmc-loader-container p {
+  color: #5a5a6e;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.nmc-error-message {
+  text-align: center;
+  padding: 60px 20px;
+  color: #c53030;
+  font-size: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========== RESPONSIVE (MEDIA QUERIES) ========== */
+
+/* Laptops aur Normal Screens (1200px tak) - 100px padding ko 50px kiya taaki layout cramped na ho */
+@media (max-width: 1200px) {
+  .nmc-container {
+    padding: 0 50px !important; 
+  }
+  .nmc-card {
+    /* 4 Columns layout */
+    width: calc((100% - (25px * 3)) / 4);
+  }
+  .nmc-grid-4col {
+    gap: 25px;
+  }
+}
+
+/* Tablets (992px tak) - 3 Columns Layout */
+@media (max-width: 992px) {
+  .nmc-container {
+    padding: 0 40px !important;
+  }
+  .nmc-card {
+    /* 3 Columns layout */
+    width: calc((100% - (20px * 2)) / 3);
+  }
+  .nmc-grid-4col {
+    gap: 20px;
+  }
+  .nmc-logo-wrapper {
+    height: 130px;
+  }
+  .nmc-logo-wrapper img {
+    max-height: 90px;
+  }
+}
+
+/* Small Tablets / Large Mobile (768px tak) - 2 Columns Layout */
+@media (max-width: 768px) {
+  .nmc-client-page {
+    padding: 100px 0 40px;
+  }
+  .nmc-container {
+    padding: 0 24px !important; /* Mobile par padding standard 24px rakhi taaki screen space bache */
+  }
+  .nmc-card {
+    /* 2 Columns layout */
+    width: calc((100% - 15px) / 2);
+  }
+  .nmc-grid-4col {
+    gap: 15px;
+  }
+  .nmc-logo-wrapper {
+    height: 110px;
+  }
+  .nmc-logo-wrapper img {
+    max-height: 80px;
+  }
+  .nmc-heading h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile Screens (480px tak) - 1 Column Layout ya centered cards */
+@media (max-width: 480px) {
+  .nmc-card {
+    width: 100%; /* Mobile par full card width aur screen center alignment */
+    max-width: 280px;
+  }
+  .nmc-logo-wrapper {
+    height: 130px;
+  }
+  .nmc-logo-wrapper img {
+    max-height: 100px;
+  }
+}

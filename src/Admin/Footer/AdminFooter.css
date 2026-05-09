@@ -1,0 +1,356 @@
+/* AdminFooter.css - Clean Government Light Theme */
+/* Professional, accessible, fully responsive – inspired by official portals */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-light: #ffffff;
+  --bg-off-white: #fafcfd;
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --text-dark: #1f2d3d;
+  --text-muted: #5b6e8c;
+  --border-light: #e2e8f0;
+  --border-focus: #8b9baf;
+  --accent: #2c5f8a;         /* government blue-grey */
+  --accent-light: #eef3f9;
+  --accent-dark: #1e405e;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.03);
+  --transition: all 0.2s ease;
+  --font-h: 'Inter', system-ui, sans-serif;
+  --font-b: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container – clean, centered, with subtle border */
+.footer-editor {
+  max-width: 1280px;
+  width: calc(100% - 40px);
+  margin: 32px auto;
+  padding: 32px 32px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-b);
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+/* Heading with official touch */
+.footer-editor h2 {
+  font-family: var(--font-h);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.2px;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+}
+
+/* Subheading / description – light */
+.footer-editor p:first-of-type {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Toast message – positioned properly, not full width */
+.toast-message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c7a4d;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  white-space: nowrap;
+  animation: toastFade 3s ease forwards;
+}
+@keyframes toastFade {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-8px); visibility: hidden; }
+}
+@media (max-width: 640px) {
+  .toast-message {
+    white-space: normal;
+    width: 90%;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Sections – clean separators */
+.footer-editor section {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+.footer-editor section h3 {
+  font-family: var(--font-h);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+.footer-editor section h4 {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  margin: 18px 0 10px;
+}
+
+/* Form rows – government style (clean, high contrast) */
+.form-row {
+  margin-bottom: 16px;
+}
+.form-row label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.form-row input,
+.form-row textarea,
+.list-item input,
+.list-item select {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+.form-row input:focus,
+.form-row textarea:focus,
+.list-item input:focus,
+.list-item select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(44, 95, 138, 0.15);
+}
+
+/* List items (dynamic rows) */
+.list-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.list-item input {
+  flex: 2;
+  min-width: 180px;
+}
+.list-item select {
+  flex: 1;
+  min-width: 140px;
+}
+.list-item .remove-btn {
+  flex-shrink: 0;
+  background: #fff6f5;
+  border: 1px solid #f3cfcf;
+  padding: 8px 16px;
+  border-radius: 40px;
+  color: #b91c1c;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.8rem;
+}
+.list-item .remove-btn:hover {
+  background: #fee2e2;
+  border-color: #f5a3a3;
+}
+
+/* Add buttons – subtle & official */
+.add-btn {
+  background: transparent;
+  border: 1px dashed var(--accent);
+  padding: 8px 20px;
+  border-radius: 40px;
+  color: var(--accent);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.add-btn:hover {
+  background: var(--accent-light);
+  border-style: solid;
+}
+
+/* Save button – solid, no harsh gradient */
+.save-btn {
+  background: var(--accent);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  max-width: 240px;
+  display: block;
+  margin: 28px auto 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.save-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(44, 95, 138, 0.2);
+}
+
+/* ========== RESPONSIVE BREAKPOINTS (fixed) ========== */
+@media (max-width: 1024px) {
+  .footer-editor {
+    padding: 28px 24px;
+    width: calc(100% - 32px);
+    margin: 24px auto;
+  }
+  .footer-editor h2 {
+    font-size: 1.5rem;
+  }
+  .list-item input,
+  .list-item select {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-editor {
+    padding: 24px 20px;
+    width: calc(100% - 24px);
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+  .footer-editor h2 {
+    font-size: 1.35rem;
+  }
+  .footer-editor section h3 {
+    font-size: 1rem;
+  }
+  .list-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .list-item input,
+  .list-item select,
+  .list-item .remove-btn {
+    width: 100%;
+    min-width: auto;
+  }
+  .list-item .remove-btn {
+    align-self: flex-start;
+  }
+  .form-row input,
+  .form-row textarea,
+  .list-item input,
+  .list-item select {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+  .save-btn {
+    max-width: 100%;
+    padding: 11px 20px;
+  }
+  .add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-editor {
+    padding: 18px 14px;
+    width: calc(100% - 16px);
+    margin: 16px auto;
+    border-radius: 8px;
+  }
+  .footer-editor h2 {
+    font-size: 1.25rem;
+    padding-left: 0.75rem;
+  }
+  .footer-editor section {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+  .form-row label {
+    font-size: 0.7rem;
+  }
+  .list-item input,
+  .list-item select {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+  .list-item .remove-btn,
+  .add-btn,
+  .save-btn {
+    font-size: 0.75rem;
+    padding: 8px 14px;
+  }
+  .toast-message {
+    top: 70px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-editor {
+    padding: 16px 12px;
+  }
+  .footer-editor h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Accessibility – focus rings */
+.form-row input:focus-visible,
+.form-row textarea:focus-visible,
+.list-item input:focus-visible,
+.list-item select:focus-visible,
+.add-btn:focus-visible,
+.save-btn:focus-visible,
+.remove-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Optional: subtle border for inputs (government forms) */
+input, textarea, select {
+  background: #fff;
+}
